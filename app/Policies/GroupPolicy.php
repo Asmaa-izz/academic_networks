@@ -18,15 +18,7 @@ class GroupPolicy
 
     public function view(User $user, Group $group): bool
     {
-        // الدكتور المنشأة
-        if ($group->user_id === $user->id) {
-            return true;
-            // الطالب المنتسب للمجموعة
-        } elseif ($group->users()->where('user_id', '=', $user->id)->exists()) {
-            return true;
-        }
-
-        return false;
+        return true;
     }
 
     public function create(User $user): bool

@@ -79,8 +79,8 @@ class GroupController extends Controller
 
         $user = Auth::user();
         if($user->hasRole('student')) {
-            $isWritePost = $user->pivotData($group->id)->is_write_post;
-            $isWriteComment = $user->pivotData($group->id)->is_write_comment;
+            $isWritePost = $user->pivotData($group->id)->is_write_post ?? false;
+            $isWriteComment = $user->pivotData($group->id)->is_write_comment ?? false;
         }
 
         return view('pages.groups.show', [

@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Comment;
 use App\Models\Group;
+use App\Models\GroupJoin;
 use App\Models\Post;
 use Illuminate\Database\Seeder;
 
@@ -20,6 +21,8 @@ class GroupSeeder extends Seeder
         $group1->users()->attach(2, ['is_admin' => false]);
         $group1->users()->attach(4, ['is_admin' => false]);
         $group1->users()->attach(5, ['is_admin' => false]);
+
+        GroupJoin::firstOrCreate(['group_id' => $group1->id, 'user_join' => 6], ['group_id' => $group1->id, 'user_join' => 6]);
 
         $p1 = Post::firstOrCreate(['group_id' => $group1->id], [
             'group_id' => $group1->id,

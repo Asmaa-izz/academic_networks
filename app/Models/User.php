@@ -79,4 +79,15 @@ class User extends Authenticatable
 
         return null; // إذا لم يكن هناك مجموعة مطابقة
     }
+
+
+    public function groupJoinAccept()
+    {
+        return $this->hasMany(GroupJoin::class, 'user_accept');
+    }
+
+    public function groupJoin()
+    {
+        return $this->hasMany(GroupJoin::class, 'user_join');
+    }
 }

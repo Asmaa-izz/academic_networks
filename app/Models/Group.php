@@ -42,4 +42,9 @@ class Group extends Model
     {
         return $this->admin()->first();
     }
+
+    public function groupJoin()
+    {
+        return $this->hasMany(GroupJoin::class);
+    }
 }

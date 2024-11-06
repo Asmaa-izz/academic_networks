@@ -1,10 +1,10 @@
 @extends('base')
-@section('title', 'مجموعاتي')
+@section('title', 'My Groups')
 @section('breadcrumb-item')
     <li class="breadcrumb-item text-gray-600">
-        <a href="{{ route('home') }}" class="text-gray-600 text-hover-primary  ms-2">الرئيسية</a>
+        <a href="{{ route('home') }}" class="text-gray-600 text-hover-primary  ms-2">Home</a>
     </li>
-    <li class="breadcrumb-item text-gray-500">مجموعاتي</li>
+    <li class="breadcrumb-item text-gray-500">My Groups</li>
 @endsection
 
 @section('content')
@@ -27,17 +27,17 @@
                             </svg>
                        </span>
                 <input type="text" data-kt-filter="search" class="form-control  w-250px pe-14"
-                       placeholder="بحث"/>
+                       placeholder="search"/>
             </div>
 
             <div class="table-responsive">
                 <table id="datatable_groups" class="table table-row-bordered gy-5">
                     <thead>
                     <tr class="fw-semibold fs-6 text-muted">
-                        <th class="text-end">الاسم</th>
-                        <th class="text-end">مدير المجموعة</th>
-                        <th class="text-end">عدد الأعضاء</th>
-                        <th class="text-end">عدد المقالات</th>
+                        <th class="text-end">Name</th>
+                        <th class="text-end">manager</th>
+                        <th class="text-end">Member count</th>
+                        <th class="text-end">Post count</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -58,7 +58,7 @@
                                         </div>
                                     </div>
                                 @else
-                                    لا يوجد
+                                    -
                                 @endif
                             </td>
                             <td>{{ $group->users->count() }}</td>
@@ -92,14 +92,6 @@
                     pagingType: "numbers",
                     processing: true,
                     paging: true,
-                    language: {
-                        "lengthMenu": `عدد النتائج في الصفحة` + "  _MENU_",
-                        "zeroRecords": `لا توجد بيانات مطابقة`,
-                        "info": "",
-                        "infoEmpty": "",
-                        "infoFiltered": "",
-                        "processing": `الرجاء الإنتظار`,
-                    }
                 });
             }
 

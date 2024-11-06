@@ -3,20 +3,33 @@
 @section('title', $group->name)
 @section('breadcrumb-item')
     <li class="breadcrumb-item text-gray-600">
-        <a href="{{ route('home') }}" class="text-gray-600 text-hover-primary  ms-2">الرئيسية</a>
+        <a href="{{ route('home') }}" class="text-gray-600 text-hover-primary  ms-2">Home</a>
     </li>
     <li class="breadcrumb-item text-gray-600">
-        <a href="{{ route('groups.index') }}" class="text-gray-600 text-hover-primary  ms-2">المجموعات</a>
+        <a href="{{ route('groups.index') }}" class="text-gray-600 text-hover-primary  ms-2">Groups</a>
     </li>
     <li class="breadcrumb-item text-gray-500">{{ $group->name }}</li>
 @endsection
 
 @section('action')
     @can('update', $group)
-        <a href="{{ route('groups.edit', $group) }}" class="btn btn-primary fw-bold ms-3">تعديل</a>
+        <a href="{{ route('groups.edit', $group) }}" class="btn btn-primary fw-bold ms-3">Edit</a>
 
-        <a href="{{ route('groups.role.edit', $group) }}" class="btn btn-primary fw-bold">تعديل الصلاحيات</a>
+        <a href="{{ route('groups.role.edit', $group) }}" class="btn btn-primary fw-bold">Edit Role</a>
     @endcan
+
+    @if((Auth::user()->hasRole('student') && $group->users) && (!in_array(Auth::id() , $group->users->pluck('id')->toArray())))
+        @if($group->groupJoin->count() > 0)
+            <span class="badge badge-secondary">Waiting for approval</span>
+        @else
+            <form action="{{ route('group-join.store') }}" method="POST">
+                @csrf
+                <input type="hidden" name="group_id" value="{{ $group->id }}">
+                <button type="submit" class="btn btn-light-primary">join</button>
+            </form>
+        @endif
+    @endif
+
 @endsection
 
 @section('content')
@@ -41,7 +54,7 @@
                                 <!--end::Name-->
                                 <!--begin::Position-->
                                 <span class="text-muted d-block fw-semibold">
-                                    بواسطة
+                                    By
                                     <a href="{{ route('users.show',  $group->user) }}"
                                        class="text-primary">{{ $group->user->name  }}</a>
                                 </span>
@@ -56,17 +69,17 @@
                             <div class="col-md-6 text-center">
                                 <div class="text-gray-800 fw-bold fs-3">
                                     <span class="m-0" data-kt-countup="true"
-                                          data-kt-countup-value="{{$posts->count()}}">0</span>
+                                          data-kt-countup-value="{{$posts->count()}}">{{$posts->count()}}</span>
                                 </div>
-                                <span class="text-gray-500 fs-8 d-block fw-bold">مقالات</span>
+                                <span class="text-gray-500 fs-8 d-block fw-bold">Pots</span>
                             </div>
                             <!--end::Col-->
                             <!--begin::Col-->
                             <div class="col-md-6 text-center">
                                 <div class="text-gray-800 fw-bold fs-3">
                                     <span class="m-0" data-kt-countup="true"
-                                          data-kt-countup-value="{{$group->users()->count()}}">0</span></div>
-                                <span class="text-gray-500 fs-8 d-block fw-bold">أعضاء</span>
+                                          data-kt-countup-value="{{$group->users()->count()}}">{{$group->users()->count()}}</span></div>
+                                <span class="text-gray-500 fs-8 d-block fw-bold">Member</span>
                             </div>
                             <!--end::Col-->
                         </div>
@@ -80,7 +93,7 @@
                     <!--begin::Header-->
                     <div class="card-header border-0 pt-5">
                         <h3 class="card-title align-items-start flex-column">
-                            <span class="card-label fw-bold text-dark">الأعضاء</span>
+                            <span class="card-label fw-bold text-dark">Members</span>
                         </h3>
                     </div>
                     <!--end::Header-->
@@ -106,9 +119,9 @@
                                     <!--end:Author-->
                                     <!--begin:Action-->
                                     @if($group->getAdmin() && ($group->getAdmin()->id === $user->id ))
-                                        <span class="badge badge-light-primary">مدير المجموعة</span>
+                                        <span class="badge badge-light-primary">group manager</span>
                                     @else
-                                        <span class="badge badge-secondary">عضو</span>
+                                        <span class="badge badge-secondary">memeber</span>
                                     @endif
                                     <!--end:Action-->
                                 </div>
@@ -161,14 +174,13 @@
                             <img src="{{ asset(Auth::user()->avatar) }}" class="" alt=""/>
                         </div>
                         <!--end::Photo-->
-                        <span class="text-gray-400 fw-semibold fs-6">انشر مقال داخل مجموعة {{ $group->name }}</span>
                     </div>
                     <!--end::Header-->
                     <!--begin::Body-->
                     <div class="card-body pt-2 pb-0">
                         <!--begin::Input-->
                         <textarea class="form-control bg-transparent border-0 px-0" id="kt_social_feeds_post_input"
-                                  name="text" data-kt-autosize="true" rows="1" placeholder="اكتب هنا..."></textarea>
+                                  name="text" data-kt-autosize="true" rows="1" placeholder="write...."></textarea>
                         <!--end::Input-->
                     </div>
                     <!--end::Body-->
@@ -177,10 +189,10 @@
                         <!--begin::Post action-->
                         <button type="submit" class="btn btn-sm btn-primary" id="kt_social_feeds_post_btn">
                             <!--begin::Indicator label-->
-                            <span class="indicator-label">انشر</span>
+                            <span class="indicator-label">post</span>
                             <!--end::Indicator label-->
                             <!--begin::Indicator progress-->
-                            <span class="indicator-progress">انتظر من فضلك...
+                            <span class="indicator-progress">wanting...
 												<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
                             <!--end::Indicator progress-->
                         </button>
@@ -304,9 +316,9 @@
                                         <!--begin::Input-->
                                         <textarea type="text" class="form-control form-control-solid border ps-5"
                                                   rows="1" name="text" data-kt-autosize="true"
-                                                  placeholder="اكتب تعليق هنا.."></textarea>
+                                                  placeholder="write comment.."></textarea>
                                         <!--end::Input-->
-                                        <button type="submit" class="btn btn-secondary btn-sm fs-8 ms-3 p-1 position-absolute start-0 top-0 top-25">تعليق</button>
+                                        <button type="submit" class="btn btn-secondary btn-sm fs-8 ms-3 p-1 position-absolute start-0 top-0 top-25">comment</button>
                                     </form>
                                     <!--end::Input group-->
                                 </div>
@@ -332,7 +344,7 @@
                     <!--begin::Header-->
                     <div class="card-header border-0 pt-5">
                         <h3 class="card-title align-items-start flex-column">
-                            <span class="card-label fw-bold text-dark">الأعضاء الأكثر نشاط</span>
+                            <span class="card-label fw-bold text-dark">The most activity members</span>
                         </h3>
                     </div>
                     <!--end::Header-->

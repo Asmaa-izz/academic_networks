@@ -1,13 +1,13 @@
 @extends('base')
-@section('title', 'إضافة مستخدم جديدة')
+@section('title', 'Create new user')
 @section('breadcrumb-item')
     <li class="breadcrumb-item text-gray-600">
-        <a href="{{ route('home') }}" class="text-gray-600 text-hover-primary  ms-2">الرئيسية</a>
+        <a href="{{ route('home') }}" class="text-gray-600 text-hover-primary  ms-2">Home</a>
     </li>
     <li class="breadcrumb-item text-gray-600">
-        <a href="{{ route('users.index') }}" class="text-gray-600 text-hover-primary  ms-2">المستخدمون</a>
+        <a href="{{ route('users.index') }}" class="text-gray-600 text-hover-primary  ms-2">Users</a>
     </li>
-    <li class="breadcrumb-item text-gray-500">إضافة مستخدم جديدة</li>
+    <li class="breadcrumb-item text-gray-500">Create new user</li>
 @endsection
 
 @section('content')
@@ -15,15 +15,15 @@
         @csrf
         <div class="card card-bordered min-h-100">
             <div class="card-header">
-                <h3 class="card-title">إضافة مستخدم جديدة</h3>
+                <h3 class="card-title">Create new user</h3>
             </div>
             <div class="card-body fs-6 py-15 px-10 py-lg-15 px-lg-15 text-gray-700">
                 <div class="row mb-5">
                     <div class="col-12">
-                        <label for="name" class="required form-label">الاسم</label>
+                        <label for="name" class="required form-label">Name</label>
                         <input id="name" type="text" name="name"
                                class="form-control @error('name') is-invalid @enderror"
-                               placeholder="الاسم" value="{{ old('name') }}"/>
+                               placeholder="Name" value="{{ old('name') }}"/>
                         @error('name')
                         <small class="invalid-feedback">{{ $message }}</small>
                         @enderror
@@ -31,10 +31,10 @@
                 </div>
                 <div class="row mb-5">
                     <div class="col-12">
-                        <label for="email" class="required form-label">البريد الالكتروني</label>
+                        <label for="email" class="required form-label">Email</label>
                         <input id="email" type="email" name="email"
                                class="form-control @error('email') is-invalid @enderror"
-                               placeholder="البريد الالكتروني" value="{{ old('name') }}"/>
+                               placeholder="Email" value="{{ old('name') }}"/>
                         @error('email')
                         <small class="invalid-feedback">{{ $message }}</small>
                         @enderror
@@ -42,12 +42,12 @@
                 </div>
                 <div class="row mb-5">
                     <div class="col-12">
-                        <label for="role" class="form-label">الصلاحية</label>
+                        <label for="role" class="form-label">Role</label>
                         <select id="role" name="role"
                                 class="form-select @error('role') is-invalid @enderror s2"
-                                data-control="select2" data-placeholder="الصلاحية" data-allow-clear="">
-                            <option value="doctor">دكتور</option>
-                            <option value="student" selected>طالب</option>
+                                data-control="select2" data-placeholder="Role" data-allow-clear="">
+                            <option value="doctor">Doctor</option>
+                            <option value="student" selected>Student</option>
                         </select>
                         @error('role')
                         <small class="invalid-feedback">{{ $message }}</small>
@@ -56,12 +56,12 @@
                 </div>
 
                 <div class="row ">
-                    <p>ملاحظة : كلمة المرور عند الانشاء تكون : "password"</p>
+                    <p>note : Password it create : "password"</p>
                 </div>
             </div>
             <div class="card-footer">
-                <button type="submit" class="btn btn-primary">حفظ</button>
-                <a href="{{ url()->previous() }}" class="btn btn-light ms-5">إلغاء</a>
+                <button type="submit" class="btn btn-primary">Save</button>
+                <a href="{{ url()->previous() }}" class="btn btn-light ms-5">Cansel</a>
             </div>
         </div>
     </form>

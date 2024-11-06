@@ -10,82 +10,84 @@ class UserSeeder extends Seeder
 {
     public function run(): void
     {
-        User::firstOrCreate(['email' => 'ali.hassan@gmail.com'], [
-            'name' => 'علي حسن',
-            'email' => 'ali.hassan@gmail.com',
-            'avatar' => 'assets/media/avatars/300-1.jpg',
+        User::firstOrCreate(['email' => 'D.Haithem@gmail.com'], [
+            'name' => 'Haithem mezni',
+            'email' => 'D.Haithem@gmail.com',
+            'avatar' => 'avatar/1.jpeg',
             'email_verified_at' => now(),
             'password' => Hash::make('123'),
         ])->assignRole('doctor');
 
-        User::firstOrCreate(['email' => 'sara.mohamed@gmail.com'], [
-            'name' => 'سارة محمد',
-            'email' => 'sara.mohamed@gmail.com',
-            'avatar' => 'assets/media/avatars/300-2.jpg',
+        User::firstOrCreate(['email' => 'RAYAN@gmail.com'], [
+            'name' => ' RAYAN ABDULMOEN ALMUGHAZWI',
+            'email' => 'RAYAN@gmail.com',
+            'avatar' => 'avatar/2.png',
             'email_verified_at' => now(),
             'password' => Hash::make('123'),
         ])->assignRole('student');
 
-        User::firstOrCreate(['email' => 'ahmed.ali@gmail.com'], [
-            'name' => 'أحمد علي',
-            'email' => 'ahmed.ali@gmail.com',
-            'avatar' => 'assets/media/avatars/300-3.jpg',
+        User::firstOrCreate(['email' => 'JAWAD@gmail.com'], [
+            'name' => 'JAWAD TALAL Al-Juhani',
+            'email' => 'JAWAD@gmail.com',
+            'avatar' => 'avatar/3.png',
             'email_verified_at' => now(),
             'password' => Hash::make('123'),
         ])->assignRole('student');
 
-        User::firstOrCreate(['email' => 'reem.khalid@gmail.com'], [
-            'name' => 'ريم خالد',
-            'email' => 'reem.khalid@gmail.com',
-            'avatar' => 'assets/media/avatars/300-4.jpg',
+        User::firstOrCreate(['email' => 'Ghassan@gmail.com'], [
+            'name' => 'Ghassan Al-Ahmadi',
+            'email' => 'Ghassan@gmail.com',
+            'avatar' => 'avatar/4.png',
             'email_verified_at' => now(),
             'password' => Hash::make('123'),
         ])->assignRole('student');
 
-        User::firstOrCreate(['email' => 'omar.saad@gmail.com'], [
-            'name' => 'عمر سعد',
-            'email' => 'omar.saad@gmail.com',
-            'avatar' => 'assets/media/avatars/300-5.jpg',
+        User::firstOrCreate(['email' => 'Ibrahim@gmail.com'], [
+            'name' => 'Ibrahim Muhammad Al-Harbi',
+            'email' => 'Ibrahim@gmail.com',
+            'avatar' => 'avatar/5.png',
             'email_verified_at' => now(),
             'password' => Hash::make('123'),
         ])->assignRole('student');
 
-        User::firstOrCreate(['email' => 'laila.ahmed@gmail.com'], [
-            'name' => 'ليلى أحمد',
-            'email' => 'laila.ahmed@gmail.com',
-            'avatar' => 'assets/media/avatars/300-6.jpg',
+
+
+        User::firstOrCreate(['email' => 'mohamed@gmail.com'], [
+            'name' => 'Mohamed',
+            'email' => 'mohamed@gmail.com',
+            'avatar' => 'avatar/6.png',
             'email_verified_at' => now(),
             'password' => Hash::make('123'),
         ])->assignRole('student');
 
         User::firstOrCreate(['email' => 'khaled.nasser@gmail.com'], [
-            'name' => 'خالد ناصر',
+            'name' => 'khaled',
             'email' => 'khaled.nasser@gmail.com',
-            'avatar' => 'assets/media/avatars/300-7.jpg',
+            'avatar' => 'avatar/7.png',
             'email_verified_at' => now(),
             'password' => Hash::make('123'),
         ])->assignRole('student');
 
-        User::firstOrCreate(['email' => 'amal.rashid@gmail.com'], [
-            'name' => 'أمل رشيد',
+        User::firstOrCreate(['email' => 'rashid@gmail.com'], [
+            'name' => 'rashid',
             'email' => 'amal.rashid@gmail.com',
-            'avatar' => 'assets/media/avatars/300-8.jpg',
+            'avatar' => 'avatar/8.png',
             'email_verified_at' => now(),
             'password' => Hash::make('123'),
         ])->assignRole('student');
 
         User::firstOrCreate(['email' => 'youssef.farid@gmail.com'], [
-            'name' => 'يوسف فريد',
+            'name' => 'youssef',
             'email' => 'youssef.farid@gmail.com',
-            'avatar' => 'assets/media/avatars/300-9.jpg',
+            'avatar' => 'avatar/9.png',
             'email_verified_at' => now(),
             'password' => Hash::make('123'),
         ])->assignRole('student');
 
-        User::firstOrCreate(['email' => 'hassan.mostafa@gmail.com'], [
-            'name' => 'حسن مصطفى',
+        User::firstOrCreate(['email' => 'mostafa@gmail.com'], [
+            'name' => 'mostafa',
             'email' => 'hassan.mostafa@gmail.com',
-            'avatar' => 'assets/media/avatars/300-11.jpg',
+            'avatar' => 'avatar/10.png',
             'email_verified_at' => now(),
             'password' => Hash::make('123'),
         ])->assignRole('student');

@@ -38,15 +38,17 @@
                 <img class="theme-dark-show mx-auto mw-100 w-150px w-lg-300px mb-10 mb-lg-20" src="{{asset('assets/media/auth/agency-dark.png')}}" alt="" />
                 <!--end::Image-->
                 <!--begin::Title-->
-                <h1 class="text-gray-800 fs-2qx fw-bold text-center mb-7">Academic Networks</h1>
+                <h1 class="text-gray-800 fs-2qx fw-bold text-center mb-7">Designing a Secure Collaboration  <br /> Service for Academic Networks</h1>
                 <!--end::Title-->
                 <!--begin::Text-->
                 <div class="text-gray-600 fs-base text-center fw-semibold">
-                    يهدف المشروع إلى تطوير منصة تعاون أكاديمية آمنة
+                    The introduction provides an overview of the project
                     <br />
-                    تتيح للدكتورين إنشاء مجموعات دراسية وإدارة صلاحيات الوصول
+                    emphasizing its significance and the core objectives
                     <br />
-                    للطلاب لضمان سرية البيانات وحماية المعلومات
+                    It also outlines the target audience and the value that
+                    <br />
+                    the system brings to academic environments.
 
                 </div>
                 <!--end::Text-->

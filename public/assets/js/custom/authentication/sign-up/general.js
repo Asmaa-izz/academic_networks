@@ -18,7 +18,7 @@ var KTSignupGeneral = function() {
 					'name': {
 						validators: {
 							notEmpty: {
-								message: 'اسم المستخدم  مطلوب'
+                                message: 'Name is required'
 							}
 						}
                     },
@@ -29,27 +29,27 @@ var KTSignupGeneral = function() {
                                 message: 'The value is not a valid email address',
                             },
 							notEmpty: {
-								message: 'عنوان البريد الإلكتروني مطلوب'
+                                message: 'Email address is required'
 							}
 						}
 					},
                     'password': {
                         validators: {
                             notEmpty: {
-                                message: 'كلمة المرور مطلوبة'
+                                message: 'The password is required'
                             },
                         }
                     },
                     'confirm-password': {
                         validators: {
                             notEmpty: {
-                                message: 'مطلوب تأكيد كلمة المرور'
+                                message: 'The password confirmation is required'
                             },
                             identical: {
                                 compare: function() {
                                     return form.querySelector('[name="password"]').value;
                                 },
-                                message: 'كلمة المرور وتأكيدها ليسا نفس الشيء'
+                                message: 'The password and its confirm are not the same'
                             }
                         }
                     },
@@ -100,10 +100,10 @@ var KTSignupGeneral = function() {
                             submitButton.disabled = false;
 
                             Swal.fire({
-                                text: "لقد تم إعادة تعيين كلمة المرور الخاصة بك بنجاح!",
+                                text: "You have successfully logged in!",
                                 icon: "success",
                                 buttonsStyling: false,
-                                confirmButtonText: "حسنًا!",
+                                confirmButtonText: "Ok, got it!",
                                 customClass: {
                                     confirmButton: "btn btn-primary"
                                 }
@@ -122,10 +122,10 @@ var KTSignupGeneral = function() {
                         error: function (response) {
                             console.log(response)
                             Swal.fire({
-                                text: "حدث خطأ ما أعد المحاولة في وقت أخر",
+                                text: "Sorry, looks like there are some errors detected, please try again.",
                                 icon: "error",
                                 buttonsStyling: false,
-                                confirmButtonText: "حسنًا!",
+                                confirmButtonText: "Ok, got it!",
                                 customClass: {
                                     confirmButton: "btn btn-primary"
                                 }
@@ -141,10 +141,10 @@ var KTSignupGeneral = function() {
                 } else {
                     // Show error popup. For more info check the plugin's official documentation: https://sweetalert2.github.io/
                     Swal.fire({
-                        text: "عذراً، يبدو أنه تم اكتشاف بعض الأخطاء، يرجى المحاولة مرة أخرى.",
+                        text: "Sorry, looks like there are some errors detected, please try again.",
                         icon: "error",
                         buttonsStyling: false,
-                        confirmButtonText: "حسنًا!",
+                        confirmButtonText: "Ok, got it!",
                         customClass: {
                             confirmButton: "btn btn-primary"
                         }

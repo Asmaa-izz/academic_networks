@@ -1,14 +1,14 @@
 @extends('base')
-@section('title', 'الملف الشخصي')
+@section('title', 'Profile')
 @section('breadcrumb-item')
     <li class="breadcrumb-item text-gray-600">
-        <a href="{{ route('home') }}" class="text-gray-600 text-hover-primary  ms-2">الرئيسية</a>
+        <a href="{{ route('home') }}" class="text-gray-600 text-hover-primary  ms-2">Home</a>
     </li>
-    <li class="breadcrumb-item text-gray-500">الملف الشخصي</li>
+    <li class="breadcrumb-item text-gray-500">Profile</li>
 @endsection
 
 @section('action')
-    <a href="{{ route('profile.edit') }}" class="btn btn-primary fw-bold">تعديل الملف الشخصي</a>
+    <a href="{{ route('profile.edit') }}" class="btn btn-primary fw-bold">Edit Profile</a>
 @endsection
 
 @section('content')
@@ -46,7 +46,7 @@
                                             <span class="path1"></span>
                                             <span class="path2"></span>
                                             <span class="path3"></span>
-                                        </i>{{ $user->hasRole('doctor') ? 'دكتور'  : 'طالب' }}</a>
+                                        </i>{{ $user->hasRole('doctor') ? 'Doctor'  : 'Student' }}</a>
                                     <a href="#" class="d-flex align-items-center text-gray-400 text-hover-primary mb-2">
                                         <i class="ki-duotone ki-sms fs-4 ms-1">
                                             <span class="path1"></span>
@@ -72,7 +72,7 @@
             <div class="card-header cursor-pointer">
                 <!--begin::Card title-->
                 <div class="card-title m-0">
-                    <h3 class="fw-bold m-0">البيانات الشخصية</h3>
+                    <h3 class="fw-bold m-0">Personal Information</h3>
                 </div>
                 <!--end::Card title-->
             </div>
@@ -82,7 +82,7 @@
                 <!--begin::Row-->
                 <div class="row mb-7">
                     <!--begin::Label-->
-                    <label class="col-lg-4 fw-semibold text-muted">الاسم</label>
+                    <label class="col-lg-4 fw-semibold text-muted">Name</label>
                     <!--end::Label-->
                     <!--begin::Col-->
                     <div class="col-lg-8">
@@ -94,7 +94,7 @@
                 <!--begin::Input group-->
                 <div class="row mb-7">
                     <!--begin::Label-->
-                    <label class="col-lg-4 fw-semibold text-muted">البريد الالكتورني</label>
+                    <label class="col-lg-4 fw-semibold text-muted">Email</label>
                     <!--end::Label-->
                     <!--begin::Col-->
                     <div class="col-lg-8 fv-row">
@@ -106,12 +106,12 @@
                 <!--begin::Input group-->
                 <div class="row mb-7">
                     <!--begin::Label-->
-                    <label class="col-lg-4 fw-semibold text-muted">الصلاحية</label>
+                    <label class="col-lg-4 fw-semibold text-muted">Role</label>
                     <!--end::Label-->
                     <!--begin::Col-->
                     <div class="col-lg-8 fv-row">
                         <span
-                            class="fw-semibold text-gray-800 fs-6">{{ $user->hasRole('doctor') ? 'دكتور'  : 'طالب' }}</span>
+                            class="fw-semibold text-gray-800 fs-6">{{ $user->hasRole('doctor') ? 'Doctor'  : 'Student' }}</span>
                     </div>
                     <!--end::Col-->
                 </div>

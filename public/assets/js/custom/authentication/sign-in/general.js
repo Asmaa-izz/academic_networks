@@ -18,17 +18,17 @@ var KTSigninGeneral = function() {
                         validators: {
                             regexp: {
                                 regexp: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                                message: 'القيمة ليست عنوان بريد إلكتروني صالح',
+                                message: 'The value is not a valid email address',
                             },
 							notEmpty: {
-								message: 'عنوان البريد الإلكتروني مطلوب'
+								message: 'Email address is required'
 							}
 						}
 					},
                     'password': {
                         validators: {
                             notEmpty: {
-                                message: 'كلمة المرور مطلوبة'
+                                message: 'The password is required'
                             }
                         }
                     }
@@ -76,10 +76,10 @@ var KTSigninGeneral = function() {
                             submitButton.disabled = false;
 
                             Swal.fire({
-                                text: "لقد تم تسجيل الدخول بنجاح!",
+                                text: "You have successfully logged in!",
                                 icon: "success",
                                 buttonsStyling: false,
-                                confirmButtonText: "حسنًا!",
+                                confirmButtonText: "Ok, got it!",
                                 customClass: {
                                     confirmButton: "btn btn-primary"
                                 }
@@ -97,10 +97,10 @@ var KTSigninGeneral = function() {
                         error: function (response) {
                             console.log(response)
                             Swal.fire({
-                                text: "حدث خطأ ما أعد المحاولة في وقت أخر",
+                                text: "Sorry, looks like there are some errors detected, please try again.",
                                 icon: "error",
                                 buttonsStyling: false,
-                                confirmButtonText: "حسنًا!",
+                                confirmButtonText: "Ok, got it!",
                                 customClass: {
                                     confirmButton: "btn btn-primary"
                                 }
@@ -116,10 +116,10 @@ var KTSigninGeneral = function() {
                 } else {
                     // Show error popup. For more info check the plugin's official documentation: https://sweetalert2.github.io/
                     Swal.fire({
-                        text: "عذراً، يبدو أنه تم اكتشاف بعض الأخطاء، يرجى المحاولة مرة أخرى.",
+                        text: "Sorry, looks like there are some errors detected, please try again.",
                         icon: "error",
                         buttonsStyling: false,
-                        confirmButtonText: "حسنًا!",
+                        confirmButtonText: "Ok, got it!",
                         customClass: {
                             confirmButton: "btn btn-primary"
                         }
@@ -164,7 +164,7 @@ var KTSigninGeneral = function() {
                                 text: "Sorry, the email or password is incorrect, please try again.",
                                 icon: "error",
                                 buttonsStyling: false,
-                                confirmButtonText: "حسنًا!",
+                                confirmButtonText: "Ok, got it!",
                                 customClass: {
                                     confirmButton: "btn btn-primary"
                                 }
@@ -175,7 +175,7 @@ var KTSigninGeneral = function() {
                             text: "Sorry, looks like there are some errors detected, please try again.",
                             icon: "error",
                             buttonsStyling: false,
-                            confirmButtonText: "حسنًا!",
+                            confirmButtonText: "Ok, got it!",
                             customClass: {
                                 confirmButton: "btn btn-primary"
                             }
@@ -187,7 +187,7 @@ var KTSigninGeneral = function() {
                         text: "Sorry, looks like there are some errors detected, please try again.",
                         icon: "error",
                         buttonsStyling: false,
-                        confirmButtonText: "حسنًا!",
+                        confirmButtonText: "Ok, got it!",
                         customClass: {
                             confirmButton: "btn btn-primary"
                         }

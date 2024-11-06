@@ -35,7 +35,7 @@ class RegisteredUserController extends Controller
         $user->name = $request->name;
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
-        $user->avatar = env('APP_URL', 'http://127.0.0.1:8000/') . 'default.png';
+        $user->avatar = 'avatar/default.png' ;
         $user->save();
 
         $user->assignRole('student');

@@ -40,7 +40,7 @@ class UserController extends Controller
         $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->avatar = 'default.png';
+        $user->avatar = 'avatar/default.png';
         $user->password = Hash::make('password');
         $user->save();
 

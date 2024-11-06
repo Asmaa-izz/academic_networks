@@ -15,14 +15,14 @@
                         <!--begin::Heading-->
                         <div class="text-center mb-11">
                             <!--begin::Title-->
-                            <h1 class="text-dark fw-bolder mb-3">إنشاء حساب جديد</h1>
+                            <h1 class="text-dark fw-bolder mb-3">Sign Up</h1>
                             <!--end::Title-->
                         </div>
                         <!--begin::Heading-->
                         <!--begin::Input group=-->
                         <div class="fv-row mb-8">
                             <!--begin::Email-->
-                            <input type="text" placeholder="اسم المستخدم" name="name" autocomplete="off"
+                            <input type="text" placeholder="Name" name="name" autocomplete="off"
                                    class="form-control bg-transparent" id="name"/>
                             <!--end::Email-->
                         </div>
@@ -30,7 +30,7 @@
                         <!--begin::Input group=-->
                         <div class="fv-row mb-8">
                             <!--begin::Email-->
-                            <input type="email" placeholder="البريد الالكتروني" name="email" autocomplete="off"
+                            <input type="email" placeholder="Email" name="email" autocomplete="off"
                                    class="form-control bg-transparent" id="email"/>
                             <!--end::Email-->
                         </div>
@@ -40,7 +40,7 @@
                             <div class="mb-1">
                                 <!--begin::Input wrapper-->
                                 <div class="position-relative mb-3">
-                                    <input class="form-control bg-transparent" type="password" placeholder="كلمة المرور"
+                                    <input class="form-control bg-transparent" type="password" placeholder="Password"
                                            name="password" autocomplete="off" id="password"/>
                                     <span
                                         class="btn btn-sm btn-icon position-absolute translate-middle top-50 end-0 me-n2"
@@ -61,7 +61,7 @@
                             </div>
                             <!--end::Wrapper-->
                             <!--begin::Hint-->
-                            <div class="text-muted">استخدم 8 أحرف أو أكثر مع مزيج من الحروف والأرقام والرموز.
+                            <div class="text-muted">Use 8 or more characters with a mix of letters, numbers & symbols.
                             </div>
                             <!--end::Hint-->
                         </div>
@@ -69,7 +69,7 @@
                         <!--end::Input group=-->
                         <div class="fv-row mb-8">
                             <!--begin::Repeat Password-->
-                            <input placeholder="كرر كلمة المرور" name="password_confirmation" type="password" id="password_confirmation"
+                            <input placeholder="Repeat Password" name="password_confirmation" type="password" id="password_confirmation"
                                    autocomplete="off" class="form-control bg-transparent"/>
                             <!--end::Repeat Password-->
                         </div>
@@ -78,10 +78,10 @@
                         <div class="d-grid mb-10">
                             <button type="submit" id="kt_sign_up_submit" class="btn btn-primary">
                                 <!--begin::Indicator label-->
-                                <span class="indicator-label">اشتراك</span>
+                                <span class="indicator-label">Sign up</span>
                                 <!--end::Indicator label-->
                                 <!--begin::Indicator progress-->
-                                <span class="indicator-progress">انتظر من فضلك...
+                                <span class="indicator-progress">Please wait...
 											<span
                                                 class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
                                 <!--end::Indicator progress-->
@@ -89,9 +89,9 @@
                         </div>
                         <!--end::Submit button-->
                         <!--begin::Sign up-->
-                        <div class="text-gray-500 text-center fw-semibold fs-6">هل لديك حساب بالفعل؟
+                        <div class="text-gray-500 text-center fw-semibold fs-6">Already have an Account?
                             <a href="{{ route('login') }}"
-                               class="link-primary fw-semibold">تسجيل الدحول</a></div>
+                               class="link-primary fw-semibold">Sign in</a></div>
                         <!--end::Sign up-->
                     </form>
                     <!--end::Form-->

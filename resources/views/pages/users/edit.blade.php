@@ -1,16 +1,16 @@
 @extends('base')
-@section('title',  $user->name . 'تعديل على مستخدم')
+@section('title',  $user->name)
 @section('breadcrumb-item')
     <li class="breadcrumb-item text-gray-600">
-        <a href="{{ route('home') }}" class="text-gray-600 text-hover-primary  ms-2">الرئيسية</a>
+        <a href="{{ route('home') }}" class="text-gray-600 text-hover-primary  ms-2">Home</a>
     </li>
     <li class="breadcrumb-item text-gray-600">
-        <a href="{{ route('users.index') }}" class="text-gray-600 text-hover-primary  ms-2">المستخدمون</a>
+        <a href="{{ route('users.index') }}" class="text-gray-600 text-hover-primary  ms-2">Users</a>
     </li>
     <li class="breadcrumb-item text-gray-600">
         <a href="{{ route('users.show', $user) }}" class="text-gray-600 text-hover-primary  ms-2">{{$user->name}}</a>
     </li>
-    <li class="breadcrumb-item text-gray-500">تعديل</li>
+    <li class="breadcrumb-item text-gray-500">Edit</li>
 @endsection
 
 @section('content')
@@ -19,15 +19,15 @@
         @method('PUT')
         <div class="card card-bordered">
             <div class="card-header">
-                <h3 class="card-title"> {{ $user->name . 'تعديل على مستخدم' }}</h3>
+                <h3 class="card-title"> {{ 'Edit user '. $user->name  }}</h3>
             </div>
             <div class="card-body fs-6 py-15 px-10 py-lg-15 px-lg-15 text-gray-700">
                 <div class="row mb-5">
                     <div class="col-12">
-                        <label for="name" class="required form-label">الاسم</label>
+                        <label for="name" class="required form-label">Name</label>
                         <input id="name" type="text" name="name"
                                class="form-control @error('name') is-invalid @enderror"
-                               placeholder="الاسم" value="{{ $user->name }}"/>
+                               placeholder="Name" value="{{ $user->name }}"/>
                         @error('name')
                         <small class="invalid-feedback">{{ $message }}</small>
                         @enderror
@@ -35,10 +35,10 @@
                 </div>
                 <div class="row mb-5">
                     <div class="col-12">
-                        <label for="email" class="required form-label">البريد الالكتروني</label>
+                        <label for="email" class="required form-label">Email</label>
                         <input id="email" type="email" name="email"
                                class="form-control @error('email') is-invalid @enderror"
-                               placeholder="البريد الالكتروني" value="{{ $user->email }}"/>
+                               placeholder="Email" value="{{ $user->email }}"/>
                         @error('email')
                         <small class="invalid-feedback">{{ $message }}</small>
                         @enderror
@@ -46,12 +46,12 @@
                 </div>
                 <div class="row mb-5">
                     <div class="col-12">
-                        <label for="role" class="form-label">الصلاحية</label>
+                        <label for="role" class="form-label">Role</label>
                         <select id="role" name="role"
                                 class="form-select @error('role') is-invalid @enderror s2"
-                                data-control="select2" data-placeholder="الصلاحية" data-allow-clear="">
-                            <option value="doctor" {{ $user->hasRole('student') ? 'selected' : null }}>دكتور</option>
-                            <option value="student" {{ $user->hasRole('student') ? 'selected' : null }}>طالب</option>
+                                data-control="select2" data-placeholder="Role" data-allow-clear="">
+                            <option value="doctor" {{ $user->hasRole('student') ? 'selected' : null }}>Doctor</option>
+                            <option value="student" {{ $user->hasRole('student') ? 'selected' : null }}>Student</option>
                         </select>
                         @error('role')
                         <small class="invalid-feedback">{{ $message }}</small>
@@ -60,8 +60,8 @@
                 </div>
             </div>
             <div class="card-footer">
-                <button type="submit" class="btn btn-primary">حفظ</button>
-                <a href="{{ url()->previous() }}" class="btn btn-light ms-5">إلغاء</a>
+                <button type="submit" class="btn btn-primary">Save</button>
+                <a href="{{ url()->previous() }}" class="btn btn-light ms-5">Cansel</a>
             </div>
         </div>
     </form>
@@ -72,15 +72,15 @@
             @method('PUT')
             <div class="card card-bordered">
                 <div class="card-header">
-                    <h3 class="card-title">تغيير كلمة المرور</h3>
+                    <h3 class="card-title">Change Password</h3>
                 </div>
                 <div class="card-body fs-6 py-15 px-10 py-lg-15 px-lg-15 text-gray-700">
                     <div class="row mb-5">
                         <div class="col-12">
-                            <label for="password" class="required form-label">كلمة المرور</label>
+                            <label for="password" class="required form-label">Password</label>
                             <input id="password" type="password" name="password"
                                    class="form-control @error('password') is-invalid @enderror"
-                                   placeholder="كلمة المرور" value=""/>
+                                   placeholder="Password" value=""/>
                             @error('password')
                             <small class="invalid-feedback">{{ $message }}</small>
                             @enderror
@@ -88,10 +88,10 @@
                     </div>
                     <div class="row mb-5">
                         <div class="col-12">
-                            <label for="password_confirmation" class="required form-label">تأكيد كلمة المرور</label>
+                            <label for="password_confirmation" class="required form-label">Repeat Password</label>
                             <input id="password_confirmation" type="password" name="password_confirmation"
                                    class="form-control @error('password_confirmation') is-invalid @enderror"
-                                   placeholder="تأكيد كلمة المرور" value=""/>
+                                   placeholder="Repeat Password" value=""/>
                             @error('password_confirmation')
                             <small class="invalid-feedback">{{ $message }}</small>
                             @enderror
@@ -99,8 +99,8 @@
                     </div>
                 </div>
                 <div class="card-footer">
-                    <button type="submit" class="btn btn-primary">تغيير</button>
-                    <a href="{{ url()->previous() }}" class="btn btn-light ms-5">إلغاء</a>
+                    <button type="submit" class="btn btn-primary">Change</button>
+                    <a href="{{ url()->previous() }}" class="btn btn-light ms-5">Cansel</a>
                 </div>
             </div>
         </form>

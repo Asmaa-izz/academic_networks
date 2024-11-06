@@ -15,9 +15,9 @@
                 <div class="fw-bold d-flex align-items-center fs-5">
                     {{ \Illuminate\Support\Facades\Auth::user()->name }}
                     @if(\Illuminate\Support\Facades\Auth::user()->hasRole('doctor'))
-                        <span class="badge badge-light-success fw-bold fs-8 px-2 py-1 me-2">مدير</span>
+                        <span class="badge badge-light-success fw-bold fs-8 px-2 py-1 me-2">Doctor</span>
                         @else
-                        <span class="badge badge-light-warning fw-bold fs-8 px-2 py-1 me-2">طالب</span>
+                        <span class="badge badge-light-warning fw-bold fs-8 px-2 py-1 me-2">Student</span>
                     @endif
 
                 </div>
@@ -33,7 +33,7 @@
     <!--begin::Menu item-->
     <div class="menu-item px-5">
         <a href="{{ route('profile.show') }}" class="menu-link px-5">
-            الملف الشخصي
+            Profile
         </a>
     </div>
     <!--end::Menu item-->
@@ -47,7 +47,7 @@
     <div class="menu-item px-5">
         <a href="{{ route('logout') }}" class="menu-link px-5"
            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-            تسجيل الخروج
+            Logout
         </a>
 
         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

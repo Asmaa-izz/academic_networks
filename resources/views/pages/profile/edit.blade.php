@@ -1,10 +1,10 @@
 @extends('base')
-@section('title', 'تعديل الملف الشخصي')
+@section('title', 'Edit Profile')
 @section('breadcrumb-item')
     <li class="breadcrumb-item text-gray-600">
-        <a href="{{ route('home') }}" class="text-gray-600 text-hover-primary  ms-2">الرئيسية</a>
+        <a href="{{ route('home') }}" class="text-gray-600 text-hover-primary  ms-2">Home</a>
     </li>
-    <li class="breadcrumb-item text-gray-500">تعديل الملف الشخصي</li>
+    <li class="breadcrumb-item text-gray-500">Edit Profile</li>
 @endsection
 
 @section('content')
@@ -43,7 +43,7 @@
                                             <span class="path1"></span>
                                             <span class="path2"></span>
                                             <span class="path3"></span>
-                                        </i>{{ $user->hasRole('doctor') ? 'دكتور'  : 'طالب' }}</a>
+                                        </i>{{ $user->hasRole('doctor') ? 'Doctor'  : 'Student' }}</a>
                                     <a href="#" class="d-flex align-items-center text-gray-400 text-hover-primary mb-2">
                                         <i class="ki-duotone ki-sms fs-4 ms-1">
                                             <span class="path1"></span>
@@ -68,7 +68,7 @@
             <div class="card-header border-0 cursor-pointer" role="button" data-bs-toggle="collapse" data-bs-target="#kt_account_profile_details" aria-expanded="true" aria-controls="kt_account_profile_details">
                 <!--begin::Card title-->
                 <div class="card-title m-0">
-                    <h3 class="fw-bold m-0">تعديل الملف الشخصي</h3>
+                    <h3 class="fw-bold m-0">Edit Profile</h3>
                 </div>
                 <!--end::Card title-->
             </div>
@@ -84,7 +84,7 @@
                         <!--begin::Input group-->
                         <div class="row mb-6">
                             <!--begin::Label-->
-                            <label class="col-lg-4 col-form-label fw-semibold fs-6">الصورة الشخصية</label>
+                            <label class="col-lg-4 col-form-label fw-semibold fs-6">Avatar</label>
                             <!--end::Label-->
                             <!--begin::Col-->
                             <div class="col-lg-8">
@@ -94,7 +94,7 @@
                                     <div class="image-input-wrapper w-125px h-125px" style="background-image: url({{ asset(\Illuminate\Support\Facades\Auth::user()->avatar) }})"></div>
                                     <!--end::Preview existing avatar-->
                                     <!--begin::Label-->
-                                    <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="change" data-bs-toggle="tooltip" title="تغيير الصورة">
+                                    <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="change" data-bs-toggle="tooltip" title="Change">
                                         <i class="ki-duotone ki-pencil fs-7">
                                             <span class="path1"></span>
                                             <span class="path2"></span>
@@ -106,7 +106,7 @@
                                     </label>
                                     <!--end::Label-->
                                     <!--begin::Cancel-->
-                                    <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="cancel" data-bs-toggle="tooltip" title="إلغاء">
+                                    <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="cancel" data-bs-toggle="tooltip" title="Cansel">
 															<i class="ki-duotone ki-cross fs-2">
 																<span class="path1"></span>
 																<span class="path2"></span>
@@ -114,7 +114,7 @@
 														</span>
                                     <!--end::Cancel-->
                                     <!--begin::Remove-->
-                                    <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="remove" data-bs-toggle="tooltip" title="حذف الصورة">
+                                    <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="remove" data-bs-toggle="tooltip" title="Delete">
 															<i class="ki-duotone ki-cross fs-2">
 																<span class="path1"></span>
 																<span class="path2"></span>
@@ -133,11 +133,11 @@
                         <!--begin::Input group-->
                         <div class="row mb-6">
                             <!--begin::Label-->
-                            <label class="col-lg-4 col-form-label required fw-semibold fs-6">الاسم</label>
+                            <label class="col-lg-4 col-form-label required fw-semibold fs-6">Name</label>
                             <!--end::Label-->
                             <!--begin::Col-->
                             <div class="col-lg-8">
-                            <input type="text" name="name" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="الاسم" value="{{ $user->name }}" />
+                            <input type="text" name="name" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Name" value="{{ $user->name }}" />
                             </div>
                             <!--end::Col-->
                         </div>
@@ -145,11 +145,11 @@
                         <!--begin::Input group-->
                         <div class="row mb-6">
                             <!--begin::Label-->
-                            <label class="col-lg-4 col-form-label fw-semibold fs-6 required">البريد الالكتورني</label>
+                            <label class="col-lg-4 col-form-label fw-semibold fs-6 required">Email</label>
                             <!--end::Label-->
                             <!--begin::Col-->
                             <div class="col-lg-8 fv-row">
-                                <input type="text" name="email" class="form-control form-control-lg form-control-solid text-muted " placeholder="البريد الالكتروني" value="{{ $user->email }}" disabled />
+                                <input type="text" name="email" class="form-control form-control-lg form-control-solid text-muted " placeholder="Email" value="{{ $user->email }}" disabled />
                             </div>
                             <!--end::Col-->
                         </div>
@@ -158,15 +158,15 @@
                         <div class="row mb-6">
                             <!--begin::Label-->
                             <label class="col-lg-4 col-form-label fw-semibold fs-6">
-                                <span class="required">الصلاحية</span>
+                                <span class="required">Role</span>
                             </label>
                             <!--end::Label-->
                             <!--begin::Col-->
                             <div class="col-lg-8 fv-row">
-                                <select name="role" aria-label="اختيار الصلاحية" data-control="select2" data-placeholder="اختيار الصلاحية..."
+                                <select name="role" aria-label="اختيار الصلاحية" data-control="select2" data-placeholder="Select role..."
                                         class="form-select form-select-solid form-select-lg fw-semibold">
-                                    <option value="doctor" {{ $user->hasRole('doctor') ? 'selected' : null }}>مدير</option>
-                                    <option value="student" {{ $user->hasRole('student') ? 'selected' : null }}>طالب</option>
+                                    <option value="doctor" {{ $user->hasRole('doctor') ? 'selected' : null }}>Doctor</option>
+                                    <option value="student" {{ $user->hasRole('student') ? 'selected' : null }}>Student</option>
                                 </select>
                             </div>
                             <!--end::Col-->
@@ -176,8 +176,8 @@
                     <!--end::Card body-->
                     <!--begin::Actions-->
                     <div class="card-footer d-flex justify-content-end py-6 px-9">
-                        <button type="reset" class="btn btn-light btn-active-light-primary me-2">إلفاء</button>
-                        <button type="submit" class="btn btn-primary" id="kt_account_profile_details_submit">حفظ التغيرات</button>
+                        <button type="reset" class="btn btn-light btn-active-light-primary me-2">Canel</button>
+                        <button type="submit" class="btn btn-primary" id="kt_account_profile_details_submit">Save</button>
                     </div>
                     <!--end::Actions-->
                 </form>
@@ -194,15 +194,15 @@
             @method('PUT')
             <div class="card card-bordered">
                 <div class="card-header">
-                    <h3 class="card-title">تغيير كلمة المرور</h3>
+                    <h3 class="card-title">Change Password</h3>
                 </div>
                 <div class="card-body fs-6 py-15 px-10 py-lg-15 px-lg-15 text-gray-700">
                     <div class="row mb-5">
                         <div class="col-12">
-                            <label for="password" class="required form-label">كلمة المرور</label>
+                            <label for="password" class="required form-label">Password</label>
                             <input id="password" type="password" name="password"
                                    class="form-control @error('password') is-invalid @enderror"
-                                   placeholder="كلمة المرور" value=""/>
+                                   placeholder="Password" value=""/>
                             @error('password')
                             <small class="invalid-feedback">{{ $message }}</small>
                             @enderror
@@ -210,10 +210,10 @@
                     </div>
                     <div class="row mb-5">
                         <div class="col-12">
-                            <label for="password_confirmation" class="required form-label">تأكيد كلمة المرور</label>
+                            <label for="password_confirmation" class="required form-label">Repeat Password</label>
                             <input id="password_confirmation" type="password" name="password_confirmation"
                                    class="form-control @error('password_confirmation') is-invalid @enderror"
-                                   placeholder="تأكيد كلمة المرور" value=""/>
+                                   placeholder="Repeat Password" value=""/>
                             @error('password_confirmation')
                             <small class="invalid-feedback">{{ $message }}</small>
                             @enderror
@@ -222,8 +222,8 @@
                     <input type="hidden" name="is_profile" value="true">
                 </div>
                 <div class="card-footer">
-                    <button type="submit" class="btn btn-primary">تغيير</button>
-                    <a href="{{ url()->previous() }}" class="btn btn-light ms-5">إلغاء</a>
+                    <button type="submit" class="btn btn-primary">Change</button>
+                    <a href="{{ url()->previous() }}" class="btn btn-light ms-5">Cansel</a>
                 </div>
             </div>
         </form>

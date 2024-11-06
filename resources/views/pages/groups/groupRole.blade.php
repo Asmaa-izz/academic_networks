@@ -1,17 +1,17 @@
 @extends('base')
-@section('title', $group->name .'صلاحيات الطلاب في مجموعة ')
+@section('title', $group->name)
 @section('breadcrumb-item')
     <li class="breadcrumb-item text-gray-600">
-        <a href="{{ route('home') }}" class="text-gray-600 text-hover-primary  ms-2">الرئيسية</a>
+        <a href="{{ route('home') }}" class="text-gray-600 text-hover-primary  ms-2">Home</a>
     </li>
     <li class="breadcrumb-item text-gray-600">
-        <a href="{{ route('groups.index') }}" class="text-gray-600 text-hover-primary  ms-2">المجموعات</a>
+        <a href="{{ route('groups.index') }}" class="text-gray-600 text-hover-primary  ms-2">Groups</a>
     </li>
     <li class="breadcrumb-item text-gray-600">
         <a href="{{ route('groups.show', $group) }}"
            class="text-gray-600 text-hover-primary  ms-2">{{ $group->name }}</a>
     </li>
-    <li class="breadcrumb-item text-gray-500">الصلاحيات</li>
+    <li class="breadcrumb-item text-gray-500">Roles</li>
 @endsection
 
 @section('content')
@@ -19,16 +19,16 @@
         @csrf
         <div class="card card-bordered min-h-100">
             <div class="card-header">
-                <h3 class="card-title">{{ $group->name .'صلاحيات الطلاب في مجموعة ' }}</h3>
+                <h3 class="card-title">{{ 'Role student in group ' . $group->name }}</h3>
             </div>
             <div class="card-body fs-6 py-15 px-10 py-lg-15 px-lg-15 text-gray-700">
                 <div class="table-responsive">
                     <table class="table">
                         <thead>
                         <tr class="fw-bold fs-6 text-gray-800">
-                            <th>العضو</th>
-                            <th class="text-start">امكانية نشر بوست</th>
-                            <th class="text-start">امكاني التعليق</th>
+                            <th>member</th>
+                            <th class="text-start">write post</th>
+                            <th class="text-start">write comment</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -66,8 +66,8 @@
                 </div>
             </div>
             <div class="card-footer">
-                <button type="submit" class="btn btn-primary">حفظ</button>
-                <a href="{{ url()->previous() }}" class="btn btn-light ms-5">إلغاء</a>
+                <button type="submit" class="btn btn-primary">Save</button>
+                <a href="{{ url()->previous() }}" class="btn btn-light ms-5">Cansel</a>
             </div>
         </div>
     </form>

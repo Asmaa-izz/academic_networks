@@ -1,15 +1,15 @@
 @extends('base')
-@section('title', 'المستخدمون')
+@section('title', 'Users')
 @section('breadcrumb-item')
     <li class="breadcrumb-item text-gray-600">
-        <a href="{{ route('home') }}" class="text-gray-600 text-hover-primary  ms-2">الرئيسية</a>
+        <a href="{{ route('home') }}" class="text-gray-600 text-hover-primary  ms-2">Home</a>
     </li>
-    <li class="breadcrumb-item text-gray-500">المستخدمون</li>
+    <li class="breadcrumb-item text-gray-500">User</li>
 @endsection
 
 @section('action')
     @can('create', User::class)
-        <a href="{{ route('users.create') }}" class="btn btn-primary fw-bold">إضافة مستخدم جديدة</a>
+        <a href="{{ route('users.create') }}" class="btn btn-primary fw-bold">Create new user</a>
     @endcan
 @endsection
 
@@ -33,16 +33,16 @@
                             </svg>
                        </span>
                 <input type="text" data-kt-filter="search" class="form-control  w-250px pe-14"
-                       placeholder="بحث"/>
+                       placeholder="Search"/>
             </div>
 
             <div class="table-responsive">
                 <table id="datatable_users" class="table table-row-bordered gy-5">
                     <thead>
                     <tr class="fw-semibold fs-6 text-muted">
-                        <th class="text-end">الاسم</th>
-                        <th class="text-end">الصلاحية</th>
-                        <th>العمليات</th>
+                        <th class="text-end">Name</th>
+                        <th class="text-end">Role</th>
+                        <th>Actions</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -63,16 +63,16 @@
                             </td>
                             <td class="d-flex align-content-between ">
                                 @if($user->hasRole('doctor'))
-                                    <span class="badge badge-light-success fw-bold fs-8 px-2 py-1 me-2">دكتور</span>
+                                    <span class="badge badge-light-success fw-bold fs-8 px-2 py-1 me-2">Doctor</span>
                                 @else
-                                    <span class="badge badge-light-warning fw-bold fs-8 px-2 py-1 me-2">طالب</span>
+                                    <span class="badge badge-light-warning fw-bold fs-8 px-2 py-1 me-2">Student</span>
                                 @endif
                             </td>
                             <td class="text-start">
                                 <a href="#" class="btn btn-light btn-active-light-primary btn-sm"
                                    data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end"
                                    data-kt-menu-flip="top-end">
-                                    العمليات
+                                    actions
                                     <span class="svg-icon svg-icon-5 m-0">
                                     <svg xmlns="http://www.w3.org/2000/svg"
                                          width="24px" height="24px" viewBox="0 0 24 24">
@@ -92,7 +92,7 @@
                                     @can('update', $user)
                                         <div class="menu-item px-3">
                                             <a href="{{ route('users.edit', $user) }}" type="button"
-                                               class="menu-link px-3">تعديل</a>
+                                               class="menu-link px-3">edit</a>
                                         </div>
                                     @endcan
                                     @can('delete', $user)
@@ -100,7 +100,7 @@
                                             <a href="" type="button" class="menu-link px-3" id="delete-user-link"
                                                data-bs-toggle="modal"
                                                data-bs-target="#delete-user-modal"
-                                               data-id="{{$user->id}}" data-name="{{$user->name}}">حذف</a>
+                                               data-id="{{$user->id}}" data-name="{{$user->name}}">delete</a>
                                         </div>
                                     @endcan
                                 </div>
@@ -119,7 +119,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">حذف مستخدم</h5>
+                    <h5 class="modal-title">Delete user</h5>
 
                     <!--begin::Close-->
                     <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal"
@@ -135,7 +135,7 @@
 
                         <div class="">
                             <h5>
-                                <span>هل أنت متأكد من عملية حذف </span>
+                                <span>Are you sure delete user </span>
                                 <span id="delete_message" class="text-danger"></span>
                                 ؟
                             </h5>
@@ -144,9 +144,9 @@
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-light"
-                                data-bs-dismiss="modal">إلغاء
+                                data-bs-dismiss="modal">Cansel
                         </button>
-                        <button type="submit" class="btn btn-danger">حذف</button>
+                        <button type="submit" class="btn btn-danger">Delete</button>
                     </div>
                 </form>
             </div>
@@ -196,14 +196,6 @@
                     pagingType: "numbers",
                     processing: true,
                     paging: true,
-                    language: {
-                        "lengthMenu": `عدد النتائج في الصفحة` + "  _MENU_",
-                        "zeroRecords": `لا توجد بيانات مطابقة`,
-                        "info": "",
-                        "infoEmpty": "",
-                        "infoFiltered": "",
-                        "processing": `الرجاء الإنتظار`,
-                    }
                 });
             }
 

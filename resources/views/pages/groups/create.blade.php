@@ -1,13 +1,13 @@
 @extends('base')
-@section('title', 'إنشاء مجموعة جديدة')
+@section('title', 'Create new group')
 @section('breadcrumb-item')
     <li class="breadcrumb-item text-gray-600">
-        <a href="{{ route('home') }}" class="text-gray-600 text-hover-primary  ms-2">الرئيسية</a>
+        <a href="{{ route('home') }}" class="text-gray-600 text-hover-primary  ms-2">Home</a>
     </li>
     <li class="breadcrumb-item text-gray-600">
-        <a href="{{ route('groups.index') }}" class="text-gray-600 text-hover-primary  ms-2">المجموعات</a>
+        <a href="{{ route('groups.index') }}" class="text-gray-600 text-hover-primary  ms-2">Groups</a>
     </li>
-    <li class="breadcrumb-item text-gray-500">إنشاء مجموعة جديدة</li>
+    <li class="breadcrumb-item text-gray-500">Create new group</li>
 @endsection
 
 @section('content')
@@ -15,15 +15,15 @@
         @csrf
         <div class="card card-bordered min-h-100">
             <div class="card-header">
-                <h3 class="card-title">إنشاء مجموعة جديدة</h3>
+                <h3 class="card-title">Create new group</h3>
             </div>
             <div class="card-body fs-6 py-15 px-10 py-lg-15 px-lg-15 text-gray-700">
                 <div class="row mb-5">
                     <div class="col-12">
-                        <label for="name" class="required form-label">الاسم</label>
+                        <label for="name" class="required form-label">Name</label>
                         <input id="name" type="text" name="name"
                                class="form-control @error('name') is-invalid @enderror"
-                               placeholder="الاسم" value="{{ old('name') }}"/>
+                               placeholder="Name" value="{{ old('name') }}"/>
                         @error('name')
                         <small class="invalid-feedback">{{ $message }}</small>
                         @enderror
@@ -31,10 +31,10 @@
                 </div>
                 <div class="row mb-5">
                     <div class="col-12">
-                        <label for="manager" class="form-label">مدير المجموعة</label>
+                        <label for="manager" class="form-label">Manger</label>
                         <select id="manager" name="manager"
                                 class="form-select @error('manager') is-invalid @enderror s2"
-                                data-control="select2" data-placeholder="مدير المجموعة" data-allow-clear="">
+                                data-control="select2" data-placeholder="group manager" data-allow-clear="">
                             <option></option>
                             @foreach($students as $manager)
                                 <option class="role_option"
@@ -50,10 +50,10 @@
                 </div>
                 <div class="row mb-5">
                     <div class="col-12">
-                        <label for="members" class="form-label">الأعضاء</label>
+                        <label for="members" class="form-label">Member</label>
                         <select id="members" name="members[]"
                                 class="form-select @error('members') is-invalid @enderror s2"
-                                data-control="select2" data-placeholder="إختار الأعضاء"
+                                data-control="select2" data-placeholder="select member"
                                 data-allow-clear="true"
                                 multiple="multiple">
                             @foreach($students as $member)
@@ -70,8 +70,8 @@
                 </div>
             </div>
             <div class="card-footer">
-                <button type="submit" class="btn btn-primary">حفظ</button>
-                <a href="{{ url()->previous() }}" class="btn btn-light ms-5">إلغاء</a>
+                <button type="submit" class="btn btn-primary">Save</button>
+                <a href="{{ url()->previous() }}" class="btn btn-light ms-5">Cansel</a>
             </div>
         </div>
     </form>

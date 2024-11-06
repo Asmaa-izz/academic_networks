@@ -25,6 +25,10 @@ Route::middleware('auth')->group(function () {
     Route::post('group-role/{group}', [GroupRoleController::class, 'update'])->name('groups.role.update');
 
 
+    Route::post('group-join', [\App\Http\Controllers\GroupJoinController::class, 'store'])->name('group-join.store');
+    Route::put('group-join/{groupJoin}', [\App\Http\Controllers\GroupJoinController::class, 'update'])->name('group-join.update');
+
+
     Route::get('my-groups', [GroupController::class, 'myGroups'])->name('my-groups');
     Route::put('change-password/{user}', [UserController::class, 'changePassword'])->name('users.change-password');
 });

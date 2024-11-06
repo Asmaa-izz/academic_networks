@@ -21,7 +21,7 @@
             <!--begin:Menu item-->
             <div data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="bottom-end"
                  class="menu-item menu-lg-down-accordion menu-sub-lg-down-indention me-0 me-lg-2">
-                <!--begin:Menu link--><span class="menu-link py-3"><span class="menu-title">المستخدمون</span><span
+                <!--begin:Menu link--><span class="menu-link py-3"><span class="menu-title">Users</span><span
                         class="menu-arrow d-lg-none"></span></span><!--end:Menu link--><!--begin:Menu sub-->
                 <div class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown px-lg-2 py-lg-4 w-lg-250px">
                     <!--begin:Menu item-->
@@ -35,7 +35,7 @@
                                  <span class="path3"></span>
                                  <span class="path4"></span>
                                 </i>
-                        </span><span class="menu-title">مشاهدة الكل</span></a>
+                        </span><span class="menu-title">View all</span></a>
                         <!--end:Menu link-->
                         <!--begin:Menu link-->
                         <a class="menu-link py-3" href="{{ route('users.create') }}">
@@ -44,7 +44,7 @@
                                  <span class="path1"></span>
                                  <span class="path2"></span>
                             </i>
-                        </span><span class="menu-title">إضافة جديد</span></a>
+                        </span><span class="menu-title">Create new</span></a>
                         <!--end:Menu link-->
                     </div><!--end:Menu item-->
                 </div><!--end:Menu sub-->
@@ -56,7 +56,7 @@
             <!--begin:Menu item-->
             <div data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="bottom-end"
                  class="menu-item menu-lg-down-accordion menu-sub-lg-down-indention me-0 me-lg-2">
-                <!--begin:Menu link--><span class="menu-link py-3"><span class="menu-title">المجموعات</span><span
+                <!--begin:Menu link--><span class="menu-link py-3"><span class="menu-title">Groups</span><span
                         class="menu-arrow d-lg-none"></span></span><!--end:Menu link--><!--begin:Menu sub-->
                 <div class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown px-lg-2 py-lg-4 w-lg-250px">
                     <!--begin:Menu item-->
@@ -72,7 +72,7 @@
                             </i>
 
                         </span>
-                            <span class="menu-title">مشاهدة الكل</span></a>
+                            <span class="menu-title">View all</span></a>
                         <!--end:Menu link-->
                         <!--begin:Menu link-->
                         <a class="menu-link py-3" href="{{ route('groups.create') }}">
@@ -81,7 +81,7 @@
                                  <span class="path1"></span>
                                  <span class="path2"></span>
                                 </i>
-                           </span><span class="menu-title">إضافة جديد</span></a>
+                           </span><span class="menu-title">Create new</span></a>
                         <!--end:Menu link-->
                     </div><!--end:Menu item-->
                 </div><!--end:Menu sub-->
@@ -91,7 +91,7 @@
 
 
         @if(Auth::user()->hasRole('student'))
-            <a class="menu-link py-3 text-dark" href="{{ route('my-groups') }}">مجموعاتي</a>
+            <a class="menu-link py-3 text-dark" href="{{ route('my-groups') }}">My Groups</a>
         @endif
 
     </div>

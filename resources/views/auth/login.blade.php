@@ -15,20 +15,20 @@
                         <!--begin::Heading-->
                         <div class="text-center mb-11">
                             <!--begin::Title-->
-                            <h1 class="text-dark fw-bolder mb-3">تسجيل الدخول</h1>
+                            <h1 class="text-dark fw-bolder mb-3">Sign In</h1>
                             <!--end::Title-->
                         </div>
                         <!--begin::Heading-->
                         <!--begin::Input group=-->
                         <div class="fv-row mb-8">
                             <!--begin::Email-->
-                            <input type="text" placeholder="البريد الالكتروني" name="email" autocomplete="off" class="form-control bg-transparent" />
+                            <input type="text" placeholder="Email" name="email" autocomplete="off" class="form-control bg-transparent" />
                             <!--end::Email-->
                         </div>
                         <!--end::Input group=-->
                         <div class="fv-row mb-3">
                             <!--begin::Password-->
-                            <input type="password" placeholder="كلمة المرور" name="password" autocomplete="off" class="form-control bg-transparent" />
+                            <input type="password" placeholder="Password" name="password" autocomplete="off" class="form-control bg-transparent" />
                             <!--end::Password-->
                         </div>
                         <!--end::Input group=-->
@@ -36,7 +36,7 @@
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" value="" id="remember"  name="remember"/>
                             <label class="form-check-label" for="remember">
-                                تذكرني
+                                Remember me
                             </label>
                         </div>
                         <!--begin::Wrapper-->
@@ -51,18 +51,18 @@
                         <div class="d-grid mb-10">
                             <button type="submit" id="kt_sign_in_submit" class="btn btn-primary">
                                 <!--begin::Indicator label-->
-                                <span class="indicator-label">تسجيل دخول</span>
+                                <span class="indicator-label">Sign In</span>
                                 <!--end::Indicator label-->
                                 <!--begin::Indicator progress-->
-                                <span class="indicator-progress">انتظر من فضلك...
+                                <span class="indicator-progress">Please wait...
 											<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
                                 <!--end::Indicator progress-->
                             </button>
                         </div>
                         <!--end::Submit button-->
                         <!--begin::Sign up-->
-                        <div class="text-gray-500 text-center fw-semibold fs-6">لست عضوا ؟
-                            <a href="{{ route('register') }}" class="link-primary">إنشاء حساب جديد</a></div>
+                        <div class="text-gray-500 text-center fw-semibold fs-6">Not a Member yet?
+                            <a href="{{ route('register') }}" class="link-primary">Sign up</a></div>
                         <!--end::Sign up-->
                     </form>
                     <!--end::Form-->

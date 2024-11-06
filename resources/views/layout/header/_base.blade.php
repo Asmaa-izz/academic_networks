@@ -12,7 +12,7 @@
 				<i class="ki-duotone ki-abstract-14 fs-2"><span class="path1"></span><span class="path2"></span></i>			</div>
 			<!--end::Heaeder menu toggle-->
 			<a href="/" class="fa-2x">
-                Academic Networks
+                Designing a Secure Collaboration Service for Academic Networks
 			</a>
 		</div>
 		<!--end::Header Logo-->
