@@ -73,7 +73,7 @@
                             <td>{{ $group->posts_count }}</td>
                             <td class="text-start">
                                 <a href="#" class="btn btn-light btn-active-light-primary btn-sm"
-                                   data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end"
+                                   data-kt-menu-trigger="click" data-kt-menu-placement="bottom-start"
                                    data-kt-menu-flip="top-end">
                                     actions
                                     <span class="svg-icon svg-icon-5 m-0">

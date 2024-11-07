@@ -9,7 +9,7 @@
             <!--end::Title-->
             <!--begin::Menu-->
             <div class="me-1">
-                <button class="btn btn-icon btn-color-gray-500 w-auto px-0 btn-active-color-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end" data-kt-menu-overflow="true">
+                <button class="btn btn-icon btn-color-gray-500 w-auto px-0 btn-active-color-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-start" data-kt-menu-overflow="true">
                     <i class="ki-duotone ki-dots-square fs-1 me-n1"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>
                 </button>
 <!--begin::Menu 1-->

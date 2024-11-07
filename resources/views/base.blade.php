@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="en"  dir="rtl" direction="rtl" style="direction:rtl;" >
+<html lang="en" dir="rtl" direction="rtl" style="direction:rtl;">
 <!--begin::Head-->
-<head><base href=""/>
+<head>
+    <base href=""/>
     <title>@yield('title')</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -12,8 +13,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
     <!--end::Fonts-->
     <!--begin::Vendor Stylesheets(used for this page only)-->
-    <link href="{{ asset('assets/plugins/custom/fullcalendar/fullcalendar.bundle.css') }}" rel="stylesheet" type="text/css"/>
-    <link href="{{ asset('assets/plugins/custom/datatables/datatables.bundle.css') }}" rel="stylesheet" type="text/css"/>
+    <link href="{{ asset('assets/plugins/custom/fullcalendar/fullcalendar.bundle.css') }}" rel="stylesheet"
+          type="text/css"/>
+    <link href="{{ asset('assets/plugins/custom/datatables/datatables.bundle.css') }}" rel="stylesheet"
+          type="text/css"/>
     <!--end::Vendor Stylesheets-->
     <!--begin::Global Stylesheets Bundle(mandatory for all pages)-->
     <link href="{{ asset('assets/plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css"/>
@@ -28,7 +31,8 @@
 </head>
 <!--end::Head-->
 <!--begin::Body-->
-<body  id="kt_body" data-kt-app-page-loading-enabled="true" data-kt-app-page-loading="on"  class="header-fixed header-tablet-and-mobile-fixed toolbar-enabled" >
+<body id="kt_body" data-kt-app-page-loading-enabled="true" data-kt-app-page-loading="on"
+      class="header-fixed header-tablet-and-mobile-fixed toolbar-enabled">
 @include('partials/theme-mode/_init')
 @include('partials/_loader')
 <!--begin::Main-->
@@ -46,7 +50,7 @@
                 <div class="content flex-row-fluid" id="kt_content">
                     <!--begin::Row-->
                     <div class="row gy-0 gx-10">
-                       @yield('content')
+                        @yield('content')
                     </div>
                     <!--end::Row-->
                 </div>

@@ -9,7 +9,7 @@
     data-kt-search-responsive="lg"
     data-kt-menu-trigger="auto"
     data-kt-menu-permanent="true"
-    data-kt-menu-placement="bottom-end"
+    data-kt-menu-placement="bottom-start"
         >
             <!--begin::Tablet and mobile search toggle-->
         <div data-kt-search-element="toggle" class="search-toggle-mobile d-flex d-lg-none align-items-center">
