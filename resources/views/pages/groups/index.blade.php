@@ -57,7 +57,7 @@
                             <td>
                                 @if($group->getAdmin())
                                     <div class="d-flex align-items-center">
-                                        <div class="symbol symbol-25px ms-3">
+                                        <div class="symbol symbol-25px me-3">
                                             <img src="{{asset($group->getAdmin()->avatar)}}" alt="">
                                         </div>
                                         <div class="d-flex justify-content-start flex-column">

@@ -173,7 +173,7 @@
                         <!--begin::Header-->
                         <div class="card-header justify-content-start align-items-center pt-4">
                             <!--begin::Photo-->
-                            <div class="symbol symbol-45px ms-5">
+                            <div class="symbol symbol-45px me-5">
                                 <img src="{{ asset(Auth::user()->avatar) }}" class="" alt=""/>
                             </div>
                             <!--end::Photo-->
@@ -348,7 +348,7 @@
                                             <!--begin::Comment-->
                                             <div class="d-flex pt-6">
                                                 <!--begin::Avatar-->
-                                                <div class="symbol symbol-45px ms-5">
+                                                <div class="symbol symbol-45px me-5">
                                                     <img src="{{ asset($comment->user->avatar) }}" alt=""/>
                                                 </div>
                                                 <!--end::Avatar-->

@@ -50,7 +50,7 @@
                         <tr>
                             <td >
                                 <div class="d-flex align-items-center">
-                                    <div class="symbol symbol-45px ms-5">
+                                    <div class="symbol symbol-45px me-5">
                                         <img src="{{ asset($user->avatar) }}" alt="">
                                     </div>
                                     <div class="d-flex justify-content-start flex-column">

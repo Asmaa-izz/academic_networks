@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="rtl" direction="rtl" style="direction:rtl;">
+<html lang="en">
 <!--begin::Head-->
 <head>
     <base href=""/>
