@@ -18,7 +18,12 @@ class HomeController extends Controller
             $q->where('user_join', '=', Auth::id())->where('joined_at', '=', null);
         }, 'users'])->get();
 
-        $groupsJoin = GroupJoin::with(['group','userJoin'])->where('joined_at', '=', null)->get();
+        $groupsJoin = GroupJoin::with(['group','userJoin'])
+            ->where('joined_at', '=', null)
+            ->whereHas('group', function ($q) {
+                return $q->where('user_id', '=', Auth::id());
+            })
+            ->get();
 
         return view('pages.home', [
             'doctor_count' => User::whereHas('roles', function ($query) {
