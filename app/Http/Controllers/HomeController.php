@@ -38,10 +38,4 @@ class HomeController extends Controller
             'groupsJoin' => $groupsJoin,
         ]);
     }
-
-    public function uplode(Request $request)
-    {
-        Log::info(0);
-        Log::info($request);
-    }
 }

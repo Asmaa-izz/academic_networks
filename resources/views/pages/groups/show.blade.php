@@ -78,7 +78,8 @@
                             <div class="col-md-6 text-center">
                                 <div class="text-gray-800 fw-bold fs-3">
                                     <span class="m-0" data-kt-countup="true"
-                                          data-kt-countup-value="{{$group->users()->count()}}">{{$group->users()->count()}}</span></div>
+                                          data-kt-countup-value="{{$group->users()->count()}}">{{$group->users()->count()}}</span>
+                                </div>
                                 <span class="text-gray-500 fs-8 d-block fw-bold">Member</span>
                             </div>
                             <!--end::Col-->
@@ -113,7 +114,7 @@
                                     <div class="flex-grow-1 me-2">
                                         <a href="{{ route('users.show', $user) }}"
                                            class="text-gray-800 text-hover-primary fs-6 fw-bold">{{ $user->name }}
-                                            </a>
+                                        </a>
                                         <span class="text-muted fw-semibold d-block fs-7">{{ $user->email }}</span>
                                     </div>
                                     <!--end:Author-->
@@ -130,7 +131,7 @@
                             <!--end::Item-->
                             <!--begin::Separator-->
                             @if(!$loop->last)
-                            <div class="separator separator-dashed my-4"></div>
+                                <div class="separator separator-dashed my-4"></div>
                             @endif
                             <!--end::Separator-->
                         @endforeach
@@ -165,97 +166,100 @@
                 <!--end::Mobile toolbar-->
                 <!--begin::Main form-->
                 @if($isWritePost)
-                <form class="card card-flush mb-10" action="{{ route('posts.store', $group) }}" method="POST" enctype="multipart/form-data">
-                    @csrf
+                    <form class="card card-flush mb-10" action="{{ route('posts.store', $group) }}" method="POST"
+                          enctype="multipart/form-data">
+                        @csrf
 
-                    <!--begin::Header-->
-                    <div class="card-header justify-content-start align-items-center pt-4">
-                        <!--begin::Photo-->
-                        <div class="symbol symbol-45px ms-5">
-                            <img src="{{ asset(Auth::user()->avatar) }}" class="" alt=""/>
+                        <!--begin::Header-->
+                        <div class="card-header justify-content-start align-items-center pt-4">
+                            <!--begin::Photo-->
+                            <div class="symbol symbol-45px ms-5">
+                                <img src="{{ asset(Auth::user()->avatar) }}" class="" alt=""/>
+                            </div>
+                            <!--end::Photo-->
                         </div>
-                        <!--end::Photo-->
-                    </div>
-                    <!--end::Header-->
-                    <!--begin::Body-->
-                    <div class="card-body pt-2 pb-0">
-                        <!--begin::Input-->
-                        <textarea class="form-control bg-transparent border-0 px-0" id="kt_social_feeds_post_input"
-                                  name="post" data-kt-autosize="true" rows="1" placeholder="write...."></textarea>
-                        <input type="hidden" name="files" id="files">
-                        <!--end::Input-->
-                    </div>
+                        <!--end::Header-->
+                        <!--begin::Body-->
+                        <div class="card-body pt-2 pb-0">
+                            <!--begin::Input-->
+                            <textarea class="form-control bg-transparent border-0 px-0" id="kt_social_feeds_post_input"
+                                      name="post" data-kt-autosize="true" rows="1" placeholder="write...."></textarea>
+                            <input type="hidden" name="files" id="files">
+                            <!--end::Input-->
+                        </div>
 
-                    <!--end::Body-->
-                    <!--begin::Footer-->
-                    <div class="card-footer d-flex justify-content-between pt-0">
-                        <!--begin::Post action-->
-                        <div>
-                            <button type="submit" class="btn btn-sm btn-primary" id="kt_social_feeds_post_btn">
-                                <!--begin::Indicator label-->
-                                <span class="indicator-label">post</span>
-                                <!--end::Indicator label-->
-                                <!--begin::Indicator progress-->
-                                <span class="indicator-progress">wanting...
+                        <!--end::Body-->
+                        <!--begin::Footer-->
+                        <div class="card-footer d-flex justify-content-between">
+                            <!--begin::Post action-->
+                            <div>
+                                <button type="submit" class="btn btn-sm btn-primary" id="kt_social_feeds_post_btn">
+                                    <!--begin::Indicator label-->
+                                    <span class="indicator-label">post</span>
+                                    <!--end::Indicator label-->
+                                    <!--begin::Indicator progress-->
+                                    <span class="indicator-progress">wanting...
 												<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
-                                <!--end::Indicator progress-->
-                            </button>
-                            <!--end::Post action-->
-                        </div>
+                                    <!--end::Indicator progress-->
+                                </button>
+                                <!--end::Post action-->
+                            </div>
 
 
-                        <!--begin::Col-->
-                        <div>
-                            <!--begin::Dropzone-->
-                            <div class="dropzone dropzone-queue mb-2" id="kt_dropzonejs_example_3">
-                                <!--begin::Controls-->
-                                <div class="dropzone-panel mb-lg-0 mb-2">
-                                    <a class="dropzone-select btn btn-sm btn-primary me-2">Attach files</a>
-                                    <a class="dropzone-remove-all btn btn-sm btn-light-primary">Remove All</a>
-                                </div>
-                                <!--end::Controls-->
+                            <!--begin::Col-->
+                            <div>
+                                <!--begin::Dropzone-->
+                                <div class="dropzone dropzone-queue mb-2" id="kt_dropzonejs_example_3">
+                                    <!--begin::Controls-->
+                                    <div class="dropzone-panel mb-lg-0 mb-2">
+                                        <a class="dropzone-select btn btn-sm btn-primary me-2">Attach files</a>
+                                        <a class="dropzone-remove-all btn btn-sm btn-light-primary">Remove All</a>
+                                    </div>
+                                    <!--end::Controls-->
 
-                                <!--begin::Items-->
-                                <div class="dropzone-items wm-200px">
-                                    <div class="dropzone-item" style="display:none">
-                                        <!--begin::File-->
-                                        <div class="dropzone-file">
-                                            <div class="dropzone-filename" title="some_image_file_name.jpg">
-                                                <span data-dz-name>some_image_file_name.jpg</span>
-                                                <strong>(<span data-dz-size>340kb</span>)</strong>
+                                    <!--begin::Items-->
+                                    <div class="dropzone-items wm-200px">
+                                        <div class="dropzone-item" style="display:none">
+                                            <!--begin::File-->
+                                            <div class="dropzone-file">
+                                                <div class="dropzone-filename" title="some_image_file_name.jpg">
+                                                    <span data-dz-name>some_image_file_name.jpg</span>
+                                                    <strong>(<span data-dz-size>340kb</span>)</strong>
+                                                </div>
+
+                                                <div class="dropzone-error" data-dz-errormessage></div>
                                             </div>
+                                            <!--end::File-->
 
-                                            <div class="dropzone-error" data-dz-errormessage></div>
-                                        </div>
-                                        <!--end::File-->
-
-                                        <!--begin::Progress-->
-                                        <div class="dropzone-progress">
-                                            <div class="progress">
-                                                <div
-                                                    class="progress-bar bg-primary"
-                                                    role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" data-dz-uploadprogress>
+                                            <!--begin::Progress-->
+                                            <div class="dropzone-progress">
+                                                <div class="progress">
+                                                    <div
+                                                        class="progress-bar bg-primary"
+                                                        role="progressbar" aria-valuemin="0" aria-valuemax="100"
+                                                        aria-valuenow="0" data-dz-uploadprogress>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <!--end::Progress-->
+                                            <!--end::Progress-->
 
-                                        <!--begin::Toolbar-->
-                                        <div class="dropzone-toolbar">
-                                            <span class="dropzone-delete" data-dz-remove><i class="bi bi-x fs-1"></i></span>
+                                            <!--begin::Toolbar-->
+                                            <div class="dropzone-toolbar">
+                                                <span class="dropzone-delete" data-dz-remove><i
+                                                        class="bi bi-x fs-1"></i></span>
+                                            </div>
+                                            <!--end::Toolbar-->
                                         </div>
-                                        <!--end::Toolbar-->
                                     </div>
+                                    <!--end::Items-->
                                 </div>
-                                <!--end::Items-->
+                                <!--end::Dropzone-->
                             </div>
-                            <!--end::Dropzone-->
-                        </div>
-                        <!--end::Col-->
+                            <!--end::Col-->
 
-                    </div>
-                    <!--end::Footer-->
-                </form>
+                        </div>
+                        <!--end::Footer-->
+                    </form>
                 @endif
                 <!--end::Main form-->
                 <!--begin::Posts-->
@@ -294,11 +298,23 @@
                                 <!--begin::Post content-->
                                 <div class="fs-6 fw-normal text-gray-700 mb-5">{{ $post->text }}</div>
                                 <!--end::Post content-->
+
                                 @if($post->media->count() > 0)
-                                    @foreach($post->media as $madia)
-                                        <a href="{{ $madia->path }}">{{ $madia->name }}</a>
-                                    @endforeach
+                                    <div class="row">
+                                        @foreach($post->media as $media)
+                                            @if(str_starts_with($media->type, 'image/'))
+                                                <a class="col-auto mb-1" href="{{asset($media->path)}}">
+                                                    <img src="{{asset($media->path)}}" alt="" class="w-100px">
+                                                </a>
+                                            @else
+                                                <div class="col-auto mb-1">
+                                                    <a href="{{ asset($media->path) }}">{{ $media->name }}</a>
+                                                </div>
+                                            @endif
+                                        @endforeach
+                                    </div>
                                 @endif
+
                             </div>
                             <!--end::Card body-->
                             <!--begin::Card footer-->
@@ -364,25 +380,29 @@
                                 </div>
                                 <!--end::Info-->
                                 @if($isWriteComment)
-                                <!--begin::Comment form-->
-                                <div class="d-flex align-items-center">
-                                    <!--begin::Author-->
-                                    <div class="symbol symbol-35px me-3">
-                                        <img src="{{ asset(Auth::user()->avatar) }}" alt=""/>
+                                    <!--begin::Comment form-->
+                                    <div class="d-flex align-items-center">
+                                        <!--begin::Author-->
+                                        <div class="symbol symbol-35px me-3">
+                                            <img src="{{ asset(Auth::user()->avatar) }}" alt=""/>
+                                        </div>
+                                        <!--end::Author-->
+                                        <!--begin::Input group-->
+                                        <form class="position-relative w-100"
+                                              action="{{ route('comments.store', $post) }}" method="POST">
+                                            @csrf
+                                            <!--begin::Input-->
+                                            <textarea type="text" class="form-control form-control-solid border ps-5"
+                                                      rows="1" name="text" data-kt-autosize="true"
+                                                      placeholder="write comment.."></textarea>
+                                            <!--end::Input-->
+                                            <button type="submit"
+                                                    class="btn btn-secondary btn-sm fs-8 ms-3 p-1 position-absolute start-0 top-0 top-25">
+                                                comment
+                                            </button>
+                                        </form>
+                                        <!--end::Input group-->
                                     </div>
-                                    <!--end::Author-->
-                                    <!--begin::Input group-->
-                                    <form class="position-relative w-100" action="{{ route('comments.store', $post) }}" method="POST">
-                                        @csrf
-                                        <!--begin::Input-->
-                                        <textarea type="text" class="form-control form-control-solid border ps-5"
-                                                  rows="1" name="text" data-kt-autosize="true"
-                                                  placeholder="write comment.."></textarea>
-                                        <!--end::Input-->
-                                        <button type="submit" class="btn btn-secondary btn-sm fs-8 ms-3 p-1 position-absolute start-0 top-0 top-25">comment</button>
-                                    </form>
-                                    <!--end::Input group-->
-                                </div>
                                 @endif
                                 <!--end::Comment form-->
                             </div>
@@ -438,8 +458,8 @@
                             <!--end::Item-->
                             <!--begin::Separator-->
                             @if(!$loop->last)
-                            <div class="separator separator-dashed my-4"></div>
-                            <!--end::Separator-->
+                                <div class="separator separator-dashed my-4"></div>
+                                <!--end::Separator-->
                             @endif
                         @endforeach
                     </div>
@@ -476,7 +496,7 @@
             };
             toastr.primary("{{ session('success') }}");
         </script>
-        @else
+    @else
         <script> toastr.danger("{{ session('errors') }}");</script>
     @endif
 
@@ -523,7 +543,7 @@
             success: function (file, response) {
                 files.push({
                     'path': response.path,
-                    'filename': response.filename,
+                    'name': response.name,
                     'type': response.type,
                 });
                 filesElement.value = JSON.stringify(files);

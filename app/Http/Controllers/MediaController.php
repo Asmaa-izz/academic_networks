@@ -17,7 +17,7 @@ class MediaController extends Controller
             $file->move(public_path('media'), $fileName);
             $path = 'media/' . $fileName;
 
-            return response()->json(['success' => true, 'fileName' => $fileName, 'path' => $path, 'type' => $file->getClientMimeType()]);
+            return response()->json(['success' => true, 'name' => $fileName, 'path' => $path, 'type' => $file->getClientMimeType()]);
         }
     }
 }

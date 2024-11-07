@@ -18,7 +18,6 @@ class PostController extends Controller
     {
 
         $request->validate(['post' => 'required',]);
-        Log::info($request);
 
         if (Auth::user()->hasRole('student')) {
             if (!Auth::user()->pivotData($group->id)->is_write_post) {
@@ -32,18 +31,17 @@ class PostController extends Controller
         $post->user_id = Auth::id();
         $post->save();
 
-        for($i=0; $i<count($request->input('files')); $i++) {
-            Log::info(1);
-        }
+        $files = json_decode($request->input('files'), true);
 
-//        Log::info(...$request->files);
-        foreach ($request->files as $file) {
-            Log::info(1);
+
+        foreach ($files as $file) {
+
+            Log::info($file);
             $media = new Media();
             $media->name = $file['name'];
             $media->type = $file['type'];
             $media->path = $file['path'];
-            $media->post_id = Auth::id();
+            $media->post_id = $post->id;
             $media->save();
         }
 

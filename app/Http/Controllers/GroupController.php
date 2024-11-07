@@ -64,7 +64,7 @@ class GroupController extends Controller
     {
         $this->authorize('view', $group);
 
-        $posts = Post::withCount('comments')->with(['user', 'comments'])->where('group_id', '=', $group->id)
+        $posts = Post::withCount('comments')->with(['user', 'comments', 'media'])->where('group_id', '=', $group->id)
             ->orderBy('created_at', 'desc')->get();
 
         $topUsers =   User::select('users.*')
@@ -83,10 +83,9 @@ class GroupController extends Controller
             $isWriteComment = $user->pivotData($group->id)->is_write_comment ?? false;
         }
 
-
         return view('pages.groups.show', [
             'group' => $group->load(['users', 'user']),
-            'posts' => $posts->load('media'),
+            'posts' => $posts,
             'topUsers' => $topUsers,
             'isWritePost' => $isWritePost ?? true,
             'isWriteComment' => $isWriteComment ?? true,
