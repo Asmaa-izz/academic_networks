@@ -6,7 +6,9 @@ use App\Models\Group;
 use App\Models\GroupJoin;
 use App\Models\Post;
 use App\Models\User;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class HomeController extends Controller
 {
@@ -30,5 +32,11 @@ class HomeController extends Controller
             'groups' => $groups,
             'groupsJoin' => $groupsJoin,
         ]);
+    }
+
+    public function uplode(Request $request)
+    {
+        Log::info(0);
+        Log::info($request);
     }
 }

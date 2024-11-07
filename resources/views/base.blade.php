@@ -60,13 +60,13 @@
     <!--end::Page-->
 </div>
 <!--end::Root-->
-@include('partials/_drawers')
+{{--@include('partials/_drawers')--}}
 <!--end::Main-->
-@include('partials/_scrolltop')
+{{--@include('partials/_scrolltop')--}}
 <!--begin::Modals-->
-@include('partials/modals/create-campaign/_main')
-@include('partials/modals/_invite-friends')
-@include('partials/modals/users-search/_main')
+{{--@include('partials/modals/create-campaign/_main')--}}
+{{--@include('partials/modals/_invite-friends')--}}
+{{--@include('partials/modals/users-search/_main')--}}
 <!--end::Modals-->
 <!--begin::Javascript-->
 <script>
@@ -94,10 +94,10 @@
 <!--end::Vendors Javascript-->
 <!--begin::Custom Javascript(used for this page only)-->
 <script src="{{ asset('assets/js/widgets.bundle.js') }}"></script>
-<script src="{{ asset('assets/js/custom/widgets.js') }}"></script>
-<script src="{{ asset('assets/js/custom/apps/chat/chat.js') }}"></script>
-<script src="{{ asset('assets/js/custom/utilities/modals/create-campaign.js') }}"></script>
-<script src="{{ asset('assets/js/custom/utilities/modals/users-search.js') }}"></script>
+{{--<script src="{{ asset('assets/js/custom/widgets.js') }}"></script>--}}
+{{--<script src="{{ asset('assets/js/custom/apps/chat/chat.js') }}"></script>--}}
+{{--<script src="{{ asset('assets/js/custom/utilities/modals/create-campaign.js') }}"></script>--}}
+{{--<script src="{{ asset('assets/js/custom/utilities/modals/users-search.js') }}"></script>--}}
 <!--end::Custom Javascript-->
 <!--end::Javascript-->
 

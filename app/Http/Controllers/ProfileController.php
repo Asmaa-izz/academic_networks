@@ -53,14 +53,14 @@ class ProfileController extends Controller
             // التحقق مما إذا كان اسم الملف الجديد يطابق اسم الملف القديم
             if ($fileName !== $user->avatar) {
                 // حذف الصورة القديمة إذا لزم الأمر
-                if ($user->avatar && file_exists(public_path('avatars/' . $user->avatar))) {
-                    unlink(public_path('avatars/' . $user->avatar));
+                if ($user->avatar && file_exists(public_path('avatar/' . $user->avatar))) {
+                    unlink(public_path('avatar/' . $user->avatar));
                 }
 
                 // حفظ الصورة الجديدة
-                $file->move(public_path('avatars'), $fileName);
+                $file->move(public_path('avatar'), $fileName);
                 // تحديث اسم الملف في قاعدة البيانات
-                $user->avatar = $fileName;
+                $user->avatar = 'avatar/' . $fileName;
             }
         }
 

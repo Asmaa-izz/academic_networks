@@ -31,6 +31,8 @@ Route::middleware('auth')->group(function () {
 
     Route::get('my-groups', [GroupController::class, 'myGroups'])->name('my-groups');
     Route::put('change-password/{user}', [UserController::class, 'changePassword'])->name('users.change-password');
+
+    Route::post('upload', [\App\Http\Controllers\MediaController::class, 'upload'])->name('upload');
 });
 
 require __DIR__.'/auth.php';

@@ -76,7 +76,7 @@
             <!--begin::Content-->
             <div id="kt_account_settings_profile_details" class="">
                 <!--begin::Form-->
-                <form action="{{ route('profile.update') }}" method="POST" >
+                <form action="{{ route('profile.update') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                     <!--begin::Card body-->

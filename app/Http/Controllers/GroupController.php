@@ -83,9 +83,10 @@ class GroupController extends Controller
             $isWriteComment = $user->pivotData($group->id)->is_write_comment ?? false;
         }
 
+
         return view('pages.groups.show', [
             'group' => $group->load(['users', 'user']),
-            'posts' => $posts,
+            'posts' => $posts->load('media'),
             'topUsers' => $topUsers,
             'isWritePost' => $isWritePost ?? true,
             'isWriteComment' => $isWriteComment ?? true,
