@@ -29,6 +29,7 @@
                             <th>member</th>
                             <th class="text-start">write post</th>
                             <th class="text-start">write comment</th>
+                            <th class="text-start">share content</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -57,6 +58,12 @@
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" value="on" id="flexCheckDefault"
                                                name="data[{{$user->id}}][comment]" {{ $user->pivotData($group->id) && $user->pivotData($group->id)->is_write_comment ? 'checked' : '' }}/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="on" id="flexCheckDefault"
+                                               name="data[{{$user->id}}][content]" {{ $user->pivotData($group->id) && $user->pivotData($group->id)->is_share_content ? 'checked' : '' }}/>
                                     </div>
                                 </td>
                             </tr>

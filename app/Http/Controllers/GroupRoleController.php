@@ -38,6 +38,12 @@ class GroupRoleController extends Controller
             }else {
                 $group->users()->updateExistingPivot($id, ['is_write_comment' => false]);
             }
+
+            if(array_key_exists('content', $item)) {
+                $group->users()->updateExistingPivot($id, ['is_share_content' => true]);
+            }else {
+                $group->users()->updateExistingPivot($id, ['is_share_content' => false]);
+            }
         }
 
         return redirect()->route('groups.show', $group)->with('success', 'Group updated.');

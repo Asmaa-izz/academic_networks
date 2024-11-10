@@ -13,7 +13,7 @@
 
 @section('action')
     @can('update', $group)
-        <a href="{{ route('groups.edit', $group) }}" class="btn btn-primary fw-bold ms-3">Edit</a>
+        <a href="{{ route('groups.edit', $group) }}" class="btn btn-primary fw-bold me-3">Edit</a>
 
         <a href="{{ route('groups.role.edit', $group) }}" class="btn btn-primary fw-bold">Edit Role</a>
     @endcan
@@ -206,6 +206,7 @@
                             </div>
 
 
+                            @if($isShareContent)
                             <!--begin::Col-->
                             <div>
                                 <!--begin::Dropzone-->
@@ -256,6 +257,7 @@
                                 <!--end::Dropzone-->
                             </div>
                             <!--end::Col-->
+                            @endif
 
                         </div>
                         <!--end::Footer-->
@@ -273,7 +275,7 @@
                                 <!--begin::Author-->
                                 <div class="d-flex align-items-center">
                                     <!--begin::Avatar-->
-                                    <div class="symbol symbol-50px ms-5">
+                                    <div class="symbol symbol-50px me-5">
                                         <img src="{{ asset($post->user->avatar) }}" class="" alt=""/>
                                     </div>
                                     <!--end::Avatar-->
@@ -358,7 +360,7 @@
                                                     <div class="d-flex align-items-center flex-wrap mb-0">
                                                         <!--begin::Name-->
                                                         <a href="#"
-                                                           class="text-gray-800 text-hover-primary fw-bold ms-6">{{ $comment->user->name }}</a>
+                                                           class="text-gray-800 text-hover-primary fw-bold">{{ $comment->user->name }}</a>
                                                         <!--end::Name-->
                                                         <!--begin::Date-->
                                                         <span
@@ -397,7 +399,7 @@
                                                       placeholder="write comment.."></textarea>
                                             <!--end::Input-->
                                             <button type="submit"
-                                                    class="btn btn-secondary btn-sm fs-8 ms-3 p-1 position-absolute start-0 top-0 top-25">
+                                                    class="btn btn-secondary btn-sm fs-8 ms-3 p-1 position-absolute end-0 top-0 top-25">
                                                 comment
                                             </button>
                                         </form>

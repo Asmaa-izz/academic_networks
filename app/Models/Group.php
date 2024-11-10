@@ -27,7 +27,8 @@ class Group extends Model
             ->withTimestamps()
             ->withPivot(['is_admin'])
             ->withPivot(['is_write_post'])
-            ->withPivot(['is_write_comment']);
+            ->withPivot(['is_write_comment'])
+            ->withPivot(['is_share_content']);
     }
 
     public function admin(): BelongsToMany

@@ -81,6 +81,7 @@ class GroupController extends Controller
         if($user->hasRole('student')) {
             $isWritePost = $user->pivotData($group->id)->is_write_post ?? false;
             $isWriteComment = $user->pivotData($group->id)->is_write_comment ?? false;
+            $isShareContent = $user->pivotData($group->id)->is_share_content ?? false;
         }
 
         return view('pages.groups.show', [
@@ -89,6 +90,7 @@ class GroupController extends Controller
             'topUsers' => $topUsers,
             'isWritePost' => $isWritePost ?? true,
             'isWriteComment' => $isWriteComment ?? true,
+            'isShareContent' => $isShareContent ?? true,
         ]);
     }
 

@@ -21,6 +21,7 @@ return new class extends Migration {
             $table->boolean('is_admin')->default(false);
             $table->boolean('is_write_post')->default(true);
             $table->boolean('is_write_comment')->default(true);
+            $table->boolean('is_share_content')->default(true);
             $table->timestamps();
         });
     }
